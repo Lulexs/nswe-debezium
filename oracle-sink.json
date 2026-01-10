@@ -1,0 +1,25 @@
+{
+  "name": "oracle-jdbc-sink",
+  "config": {
+    "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+    "hibernate.dialect": "org.hibernate.dialect.OracleDialect",
+    "tasks.max": "1",
+
+    "connection.url": "jdbc:oracle:thin:@//oracle:1521/FREEPDB1",
+    "connection.username": "system",
+    "connection.password": "oracle",
+
+    "insert.mode": "upsert",
+    "delete.enabled": "true",
+
+    "primary.key.mode": "record_key",
+
+    "schema.evolution": "none",
+    "use.time.zone": "UTC",
+
+    "topics": "dbz.public.app_user,dbz.public.user_attributes",
+
+    "collection.name.format": "${source.table}",
+    "table.name.format": "${source.table}"
+  }
+}

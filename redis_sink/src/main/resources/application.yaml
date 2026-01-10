@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: redis_sink
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    streams:
+      application-id: custom-redis-sink
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+kafka:
+  cdc:
+    topics:
+      - dbz.public.app_user
+      - dbz.public.user_attributes
