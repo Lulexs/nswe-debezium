@@ -440,3 +440,6 @@ curl -X POST \
 ```
 
 Projekat sadrzi i custom redis-sink. Radi se o projektu koji je realizovan koriscenjem programskog jezika Java i SpringBoot framework-a. Uloga ovog servisa je da ažurira podatke u Redisu, koji se najčešće koristi za keširanje. Cilj ovog servisa je demonstracija implementacije custom sink connector-a. Ovaj projekat se povezuje na Kafku i sa odgovarajućih topic-a čita cdc event-e. U zavisnosti od tipa eventa upisuje ili briše podatak iz Redis-a.
+
+Na narednoj slici je prikazan blok dijagram sistema koji se dobije pokretanjem docker compose-a i redis sink-a.
+![Screenshot](diagram.png)
